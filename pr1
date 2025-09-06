@@ -22,4 +22,16 @@ echo "| $text |"
 echo "$border"
 
 4.  awk -F"[^a-zA-Z]" '{for(i=1;i<NF;i++) if($i!="") print $i}' hello.c | sort | tr "\n" " "
+
+5. 
+#!/bin/bash
+ 
+program="$1"
+chmod +x "$program"
+ 
+cp "$program" /usl/local/bin/
+ 
+echo "Программа '$program' успешно зарегистрирована как системная"
+
+
  
