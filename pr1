@@ -6,3 +6,20 @@
 2.  awk '{print $2, $1}' /etc/protocols | sort -nr | head -5
 
 3. 
+#!/bin/bash
+ 
+text="$1"
+length=${#text}
+ 
+border="+"
+for((i = 0; i < length+2; i++)); do
+        border+="-"
+done
+border+="+"
+ 
+echo "$border"
+echo "| $text |"
+echo "$border"
+
+4. 
+ 
