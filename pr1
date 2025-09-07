@@ -39,5 +39,13 @@ find . -name "*.py" | while read f; do head -1 "$f" | grep -q "^#" || echo "no $
 
 7. find "$1" -type f - exec sha256sum {} + | sort | uniq -w64 -dD 
 
-8.
+8. 
+#!/bin/bash
+tar -czf "${2:-archive.tar.gz}" $(find "$1" -name "*.$3")
+
+9.
+#!/bin/bash
+sed 's/    /\t/g' "$1" > "$2"
+
+10. find "$1" -type f -name "*.txt" -empty
 
