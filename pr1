@@ -33,5 +33,11 @@ cp "$program" /usl/local/bin/
  
 echo "Программа '$program' успешно зарегистрирована как системная"
 
+6. 
+find . -name "*.c" -o -name "*.js" | while read f; do head -1 "$f" | grep -q "^\(//\|/*\)" echo "no $f"; done
+find . -name "*.py" | while read f; do head -1 "$f" | grep -q "^#" || echo "no $f"; done 
 
- 
+7. find "$1" -type f - exec sha256sum {} + | sort | uniq -w64 -dD 
+
+8.
+
